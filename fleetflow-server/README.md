@@ -104,7 +104,7 @@ node server.js
 ## Build Phases
 
 - [x] **Phase 1** — Auth foundation: JWT, RBAC, hardened Express setup
-- [ ] **Phase 2** — Core CRUD: Vehicle Registry, Trip Dispatcher, Maintenance
-- [ ] **Phase 3** — Role-scoped features: Trip & Expense, Performance, Analytics, User Management
+- [x] **Phase 2** — Core CRUD: Vehicle Registry, Trip Dispatcher, Maintenance
+- [x] **Phase 3** — Role-scoped features: Trip & Expense, Performance, Analytics, User Management
 - [ ] **Phase 4** — Frontend: landing page, login, role-based dashboards
 - [ ] **Phase 5** — Hardening & deployment to Vercel
