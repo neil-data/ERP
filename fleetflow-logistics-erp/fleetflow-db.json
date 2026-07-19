@@ -1,0 +1,221 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Anand Verma",
+      "email": "admin@fleetflow.in",
+      "role": "fleet_manager",
+      "password": "password"
+    },
+    {
+      "id": "u2",
+      "name": "Sanjay Mehra",
+      "email": "dispatch@fleetflow.in",
+      "role": "dispatcher",
+      "password": "password"
+    },
+    {
+      "id": "u3",
+      "name": "Captain Amit Singh",
+      "email": "safety@fleetflow.in",
+      "role": "safety_officer",
+      "password": "password"
+    },
+    {
+      "id": "u4",
+      "name": "Pooja Sharma",
+      "email": "finance@fleetflow.in",
+      "role": "financial_analyst",
+      "password": "password"
+    },
+    {
+      "id": "u_1784354175723",
+      "name": "neil banerjee",
+      "email": "demo@quantira.labs",
+      "role": "fleet_manager",
+      "password": "Quantira@123"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "D1",
+      "name": "Rajesh Kumar",
+      "licenseNumber": "DL-14-2019-0012345",
+      "phone": "9876543210",
+      "status": "On Trip",
+      "rating": 4.8,
+      "tripsCompleted": 142,
+      "safetyScore": 94
+    },
+    {
+      "id": "D2",
+      "name": "Gurpreet Singh",
+      "licenseNumber": "PB-02-2015-0876543",
+      "phone": "9812345678",
+      "status": "Available",
+      "rating": 4.9,
+      "tripsCompleted": 230,
+      "safetyScore": 98
+    },
+    {
+      "id": "D3",
+      "name": "Muthu Karuppan",
+      "licenseNumber": "TN-05-2018-0987654",
+      "phone": "9444012345",
+      "status": "On Leave",
+      "rating": 4.5,
+      "tripsCompleted": 89,
+      "safetyScore": 88
+    },
+    {
+      "id": "D4",
+      "name": "Amit Yadav",
+      "licenseNumber": "HR-26-2021-0005432",
+      "phone": "9999123456",
+      "status": "Available",
+      "rating": 4.7,
+      "tripsCompleted": 64,
+      "safetyScore": 91
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "V1",
+      "registrationNumber": "MH-12-QG-4567",
+      "model": "Tata Prima 4930.S",
+      "type": "Heavy Truck",
+      "capacity": 40,
+      "fuelType": "Diesel",
+      "status": "Active",
+      "currentMileage": 184500,
+      "nextServiceKm": 190000
+    },
+    {
+      "id": "V2",
+      "registrationNumber": "DL-01-MA-1234",
+      "model": "Ashok Leyland Ecomet",
+      "type": "Medium Truck",
+      "capacity": 16,
+      "fuelType": "Diesel",
+      "status": "Active",
+      "currentMileage": 92100,
+      "nextServiceKm": 95000
+    },
+    {
+      "id": "V3",
+      "registrationNumber": "KA-03-MM-8901",
+      "model": "Mahindra Blazo X",
+      "type": "Heavy Truck",
+      "capacity": 35,
+      "fuelType": "Diesel",
+      "status": "In Maintenance",
+      "currentMileage": 241200,
+      "nextServiceKm": 241500
+    },
+    {
+      "id": "V4",
+      "registrationNumber": "GJ-01-XX-9876",
+      "model": "Tata Ultra T.7",
+      "type": "Light Commercial",
+      "capacity": 7,
+      "fuelType": "Electric",
+      "status": "Active",
+      "currentMileage": 43500,
+      "nextServiceKm": 50000
+    }
+  ],
+  "trips": [
+    {
+      "id": "T1",
+      "tripNumber": "FT-2026-1001",
+      "vehicleId": "V1",
+      "driverId": "D1",
+      "origin": "Mumbai Port",
+      "destination": "Delhi NCR",
+      "startDate": "2026-07-15",
+      "status": "In Transit",
+      "weight": 38.5,
+      "expenseAmount": 42000
+    },
+    {
+      "id": "T2",
+      "tripNumber": "FT-2026-1002",
+      "vehicleId": "V2",
+      "driverId": "D2",
+      "origin": "Chennai SEZ",
+      "destination": "Bengaluru Hub",
+      "startDate": "2026-07-16",
+      "status": "Scheduled",
+      "weight": 14.2,
+      "expenseAmount": 12000
+    },
+    {
+      "id": "T3",
+      "tripNumber": "FT-2026-1003",
+      "vehicleId": "V4",
+      "driverId": "D4",
+      "origin": "Ahmedabad",
+      "destination": "Pune Logistics Park",
+      "startDate": "2026-07-10",
+      "endDate": "2026-07-12",
+      "status": "Completed",
+      "weight": 6.8,
+      "expenseAmount": 8500
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "M1",
+      "vehicleId": "V3",
+      "serviceType": "Engine Oil",
+      "scheduledDate": "2026-07-14",
+      "status": "In Progress",
+      "cost": 18500,
+      "notes": "Routine oil change and filter replacements."
+    },
+    {
+      "id": "M2",
+      "vehicleId": "V1",
+      "serviceType": "Tire Replacement",
+      "scheduledDate": "2026-07-01",
+      "completedDate": "2026-07-02",
+      "status": "Completed",
+      "cost": 74000,
+      "notes": "Replaced 6 rear radial tires."
+    }
+  ],
+  "expenses": [
+    {
+      "id": "E1",
+      "tripId": "T1",
+      "vehicleId": "V1",
+      "category": "Fuel",
+      "amount": 28500,
+      "date": "2026-07-15",
+      "status": "Approved",
+      "submittedBy": "Anand Verma",
+      "description": "250L Diesel refueled at HP Outlet, Pune Bypass."
+    },
+    {
+      "id": "E2",
+      "tripId": "T1",
+      "vehicleId": "V1",
+      "category": "Toll",
+      "amount": 8200,
+      "date": "2026-07-15",
+      "status": "Pending",
+      "submittedBy": "Anand Verma",
+      "description": "Fastag auto-deductions between Mumbai and Surat."
+    },
+    {
+      "id": "E3",
+      "vehicleId": "V3",
+      "category": "Maintenance",
+      "amount": 18500,
+      "date": "2026-07-14",
+      "status": "Pending",
+      "submittedBy": "Sanjay Mehra",
+      "description": "Engine oil service charge."
+    }
+  ]
+}

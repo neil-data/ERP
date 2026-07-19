@@ -1,0 +1,17 @@
+{
+  "name": "FleetFlow Logistics ERP",
+  "description": "An enterprise-grade role-based logistics ERP featuring fleet dispatching, driver telemetry, maintenance tracking, and real-time analytics.",
+  "requestFramePermissions": [],
+  "permissions": [
+    "read:users",
+    "read:drivers",
+    "read:vehicles",
+    "read:routes",
+    "read:dispatches",
+    "read:maintenance",
+    "read:analytics"
+  ],
+  "version": "1.0.0",
+  "author": "FleetFlow Inc.",
+  "license": "MIT" 
+}
