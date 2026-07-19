@@ -25,16 +25,48 @@ connectDB();
 const app = express();
 
 app.use(helmet());
-app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
+
+// Build a clean list of allowed origins from env (comma-separated),
+// stripping any trailing slashes or whitespace that would break exact matching
+const allowedOrigins = (process.env.FRONTEND_URL || '')
+  .split(',')
+  .map(origin => origin.trim().replace(/\/$/, ''))
+  .filter(Boolean);
+
+// Always allow localhost during development regardless of env config
+if (process.env.NODE_ENV !== 'production') {
+  allowedOrigins.push('http://localhost:3000');
+}
+
+console.log('CORS allowed origins:', allowedOrigins);
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (e.g. curl, mobile apps, server-to-server)
+    if (!origin) return callback(null, true);
+
+    const cleanedOrigin = origin.replace(/\/$/, '');
+
+    if (allowedOrigins.includes(cleanedOrigin)) {
+      callback(null, true);
+    } else {
+      console.warn(`CORS blocked request from origin: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(mongoSanitize());
 
 const globalLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 100,
+    max: 1000, // raised from 100 for dev — lower this back down before real deployment
     message: "Too many requests from this IP, please try again after 15 minutes"
 });
+
 app.use('/api/', globalLimiter);
 
 app.use('/api/auth', authRoutes);
